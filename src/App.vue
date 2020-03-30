@@ -3,7 +3,7 @@
     <img alt="Vue logo" src="./assets/logo.png">
     <Login v-if="displayLogin" />
     <Signup v-else />
-    <button v-on:click='handleChangeFormClick'>
+    <button @click='handleChangeFormClick'>
       <span v-if='displayLogin'>Don't have an account? Signup insted</span>
       <span v-else>Have an account? Sign in</span>
     </button>
@@ -20,11 +20,9 @@ export default {
     Login,
     Signup
   },
-  data: function() {
-    return {
+  data: () => ({
       displayLogin: true,
-    }
-  },
+  }),
   methods: {
     handleChangeFormClick: function() {
       this.displayLogin = !this.displayLogin;
