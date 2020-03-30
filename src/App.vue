@@ -1,23 +1,41 @@
 <template>
-  <div id="app">
+  <div id="landingPage">
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Login v-if="displayLogin" />
+    <Signup v-else />
+    <button v-on:click='handleChangeFormClick'>
+      <span v-if='displayLogin'>Don't have an account? Signup insted</span>
+      <span v-else>Have an account? Sign in</span>
+    </button>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Login from './components/Login.vue';
+import Signup from './components/Signup.vue';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Login,
+    Signup
+  },
+  data: function() {
+    return {
+      displayLogin: true,
+    }
+  },
+  methods: {
+    handleChangeFormClick: function() {
+      this.displayLogin = !this.displayLogin;
+    }
   }
 }
+
 </script>
 
 <style>
-#app {
+#landingPage {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
