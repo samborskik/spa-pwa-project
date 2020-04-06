@@ -1,6 +1,6 @@
 <template>
   <div id="landingPage">
-    <img alt="Vue logo" src="./assets/logo.png">
+    <img alt="Codewars logo" src="./assets/Codewars.png">
     <Login v-if="displayLogin" />
     <Signup v-else />
     <button @click='handleChangeFormClick'>
