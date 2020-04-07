@@ -1,32 +1,56 @@
 <template>
   <div id="landingPage">
-    <img alt="Codewars logo" src="./assets/img/Codewars.png">
-    <Login v-if="displayLogin" />
-    <Signup v-else />
-    <b-button @click='handleChangeFormClick'>
-      <span v-if='displayLogin'>Don't have an account? Create one!</span>
-      <span v-else>Have an account? Sign in</span>
-    </b-button>
+    <HomePage
+      :setUserSession="this.setUserSession"
+      v-if="isUserLoggedIn"
+    />
+    <div v-else>
+      <img alt="Codewars logo" src="./assets/img/Codewars.png">
+      <Login
+        :setUserSession="this.setUserSession"
+        v-if="displayLogin"
+      />
+      <Signup v-else />
+      <b-button @click='handleChangeFormClick'>
+        <span v-if='displayLogin'>Don't have an account? Create one!</span>
+        <span v-else>Have an account? Sign in</span>
+      </b-button>
+    </div>
+    
   </div>
 </template>
 
 <script>
 import Login from './components/Login.vue';
 import Signup from './components/Signup.vue';
+import HomePage from './components/HomePage.vue';
 
 export default {
   name: 'App',
   components: {
     Login,
-    Signup
+    Signup,
+    HomePage,
   },
   data: () => ({
       displayLogin: true,
+      isUserLoggedIn: false
   }),
   methods: {
     handleChangeFormClick: function() {
       this.displayLogin = !this.displayLogin;
+    },
+    checkUserSession: function() {
+      console.log("check", this.isUserLoggedIn)
+      let session = localStorage.getItem('spa-pwa-project')
+      this.isUserLoggedIn = null !== session;
+    },
+    setUserSession: function(param) {
+      this.isUserLoggedIn = param;
     }
+  },
+  mounted: function() {
+    this.checkUserSession();
   }
 }
 
