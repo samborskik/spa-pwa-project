@@ -19,6 +19,9 @@ import firebase from 'firebase';
 
 export default {
   name: 'Login',
+  props: {
+    setUserSession: Function
+  },
   data: () => ({
     email: '',
     password: '',
@@ -27,7 +30,11 @@ export default {
     signIn: function() {
       firebase.auth().signInWithEmailAndPassword(this.email, this.password)
         .then(
-          () => alert("Logged in!"),
+          () => {
+            localStorage.setItem('spa-pwa-project', this.email);
+            this.setUserSession(true);
+            alert('Logged in!')
+          },
           (err) => alert(`Error: ${err.message}`)
         )
     }
