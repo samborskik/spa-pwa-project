@@ -4,12 +4,19 @@
     <button @click="userLogOut"> 
       Logout! 
     </button>
+    <SearchUser />
   </div>
 </template>
 
 <script>
+import SearchUser from './SearchUser';
+
+
 export default {
   name: 'HomePage',
+  components: {
+    SearchUser
+  },
   props: {
     setUserSession: Function
   },
