@@ -1,31 +1,52 @@
 <template>
   <div>
-    LOGGED IN!
-    <button @click="userLogOut"> 
+    <button @click="handleUserLogout"> 
       Logout! 
     </button>
-    <SearchUser />
+    <SearchUser :getUserData="this.getUserData" />
+    <Loader v-if="isLoading" />
+    <User
+      v-if="isLoading === false && userData.name !== undefined"
+      :userData="this.userData"
+    />
   </div>
 </template>
 
 <script>
 import SearchUser from './SearchUser';
-
+import Loader from './Loader';
+import User from './User';
 
 export default {
   name: 'HomePage',
+  data: () => ({
+    showFavoritesUsers: false,
+    isLoading: false,
+    userData: {}
+  }),
   components: {
-    SearchUser
+    SearchUser,
+    Loader,
+    User
   },
   props: {
     setUserSession: Function
   },
   methods: {
-    userLogOut: function() { 
+    handleUserLogout: function() { 
       localStorage.removeItem("spa-pwa-project")
       this.setUserSession(false);
       alert('Logged out!')
-    }
+    },
+    getUserData: function(user) {
+      this.isLoading = true;
+      fetch(`https://cors-anywhere.herokuapp.com/https://www.codewars.com/api/v1/users/${user}`)
+        .then(res => res.json())
+        .then(res => {
+          this.userData = res
+          this.isLoading = false;
+        })
+    },
   }
 }
 </script>

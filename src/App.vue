@@ -16,7 +16,6 @@
         <span v-else>Have an account? Sign in</span>
       </b-button>
     </div>
-    
   </div>
 </template>
 
@@ -41,7 +40,6 @@ export default {
       this.displayLogin = !this.displayLogin;
     },
     checkUserSession: function() {
-      console.log("check", this.isUserLoggedIn)
       let session = localStorage.getItem('spa-pwa-project')
       this.isUserLoggedIn = null !== session;
     },
@@ -59,20 +57,22 @@ export default {
 <style lang="scss">
 @import './assets/styles/custom.scss';
 @import '../node_modules/bootstrap/scss/bootstrap.scss';
+
 body {
   background: #333;
   margin: 0;
   padding: 0;
 }
+
 .login {
   max-width: 20vw;
   margin: 0 auto;
 }
 
-
 .reddish {
   margin: 2vh;
 }
+
 #landingPage {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -81,4 +81,5 @@ body {
   color: #b32;
   margin-top: 60px;
 }
+
 </style>
