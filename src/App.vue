@@ -16,6 +16,7 @@
         <span v-else>Have an account? Sign in</span>
       </b-button>
     </div>
+
   </div>
 </template>
 

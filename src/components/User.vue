@@ -13,7 +13,6 @@
 
 <script>
 import firebase from 'firebase';
-const db = firebase.firestore();
 
 export default {
   name: 'User',
@@ -22,6 +21,7 @@ export default {
   },
   methods: {
     addUserToFavorites: async function() {
+      const db = firebase.firestore();
       const appUser = localStorage.getItem('spa-pwa-project')
       const dbRef = db.collection(appUser).doc(this.userData.username);
       dbRef.get()
