@@ -1,8 +1,8 @@
 <template>
   <div>
-    <button @click="handleUserLogout"> 
+    <b-button @click="handleUserLogout"> 
       Logout! 
-    </button>
+    </b-button>
     <SearchUser :getUserData="this.getUserData" />
     <Loader v-if="isLoading" />
     <User
