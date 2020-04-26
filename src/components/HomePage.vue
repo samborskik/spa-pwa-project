@@ -1,14 +1,19 @@
 <template>
   <div>
-    <b-button @click="handleUserLogout"> 
-      Logout! 
-    </b-button>
-    <SearchUser :getUserData="this.getUserData" />
-    <Loader v-if="isLoading" />
-    <User
+    <b-button @click='handleChangeFormClick'>Show favourites</b-button>
+    <div v-if="changeView">
+      <b-button @click="handleUserLogout"> 
+        Logout! 
+      </b-button>
+      <SearchUser :getUserData="this.getUserData" />
+      <Loader v-if="isLoading" />
+      <User
       v-if="isLoading === false && userData.name !== undefined"
-      :userData="this.userData"
-    />
+      :userData="this.userData"/>
+    </div>
+    <div v-else>
+      <h1>dupa</h1>
+    </div>
   </div>
 </template>
 
@@ -20,6 +25,7 @@ import User from './User';
 export default {
   name: 'HomePage',
   data: () => ({
+    changeView: false,
     showFavoritesUsers: false,
     isLoading: false,
     userData: {}
@@ -33,6 +39,9 @@ export default {
     setUserSession: Function
   },
   methods: {
+    handleChangeFormClick: function() {
+      this.changeView = !this.changeView;
+    },
     handleUserLogout: function() { 
       localStorage.removeItem("spa-pwa-project")
       this.setUserSession(false);
