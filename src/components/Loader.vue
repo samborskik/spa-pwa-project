@@ -1,6 +1,6 @@
 <template>
   <div>
-    Loading... (add some kind of loader)
+    <b-spinner style="width: 3rem; height: 3rem;" class="m-5" label="Busy"></b-spinner>
   </div>
 </template>
 
