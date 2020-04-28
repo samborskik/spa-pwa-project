@@ -11,13 +11,15 @@
         v-if="displayLogin"
       />
       <Signup v-else />
-      <b-button @click='handleChangeFormClick'>
-        <span v-if='displayLogin'>Don't have an account? Create one!</span>
-        <span v-else>Have an account? Sign in</span>
-      </b-button>
-      <b-button @click='handleLoginWithGoogle'>
-        <span>Login with Google account</span>
-      </b-button>
+      <div class="btn-group-vertical">
+        <b-button @click='handleChangeFormClick' id="group-buttons">
+          <span v-if='displayLogin'>Don't have an account? Create one!</span>
+          <span v-else>Have an account? Sign in</span>
+        </b-button>
+        <b-button @click='handleLoginWithGoogle' id="group-buttons">
+          <span>Login with Google account</span>
+        </b-button>
+      </div>
     </div>
 
   </div>
