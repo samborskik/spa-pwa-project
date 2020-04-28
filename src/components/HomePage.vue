@@ -1,17 +1,19 @@
 <template>
   <div>
-    <b-button @click='handleChangeFormClick'>Show favourites</b-button>
+    <b-button class="float-sm-right" @click='handleChangeFormClick'>
+      <span v-if="changeView">Show Favorites</span>
+      <span v-else>Back to Search</span>
+    </b-button>
     <div v-if="changeView">
-      <b-button @click="handleUserLogout"> 
-        Logout! 
-      </b-button>
+      <b-button class="float-sm-right" @click="handleUserLogout" variant="primary">Logout!</b-button>
       <SearchUser :getUserData="this.getUserData" />
-      <Loader v-if="isLoading" />
-      <User
+    <Loader v-if="isLoading" />
+    <User
       v-if="isLoading === false && userData.name !== undefined"
       :userData="this.userData"/>
     </div>
     <div v-else>
+      <b-button class="float-sm-right" @click="handleUserLogout" variant="primary">Logout!</b-button>
       <h1>dupa</h1>
     </div>
   </div>
