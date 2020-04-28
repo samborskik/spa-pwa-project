@@ -15,6 +15,9 @@
         <span v-if='displayLogin'>Don't have an account? Create one!</span>
         <span v-else>Have an account? Sign in</span>
       </b-button>
+      <b-button @click='handleLoginWithGoogle'>
+        <span>Login with Google account</span>
+      </b-button>
     </div>
 
   </div>
@@ -24,6 +27,8 @@
 import Login from './components/Login.vue';
 import Signup from './components/Signup.vue';
 import HomePage from './components/HomePage.vue';
+
+import firebase from 'firebase';
 
 export default {
   name: 'App',
@@ -46,6 +51,15 @@ export default {
     },
     setUserSession: function(param) {
       this.isUserLoggedIn = param;
+    },
+    handleLoginWithGoogle: function() {
+      var provider = new firebase.auth.GoogleAuthProvider();
+      firebase.auth().signInWithPopup(provider).then((result) => {
+      localStorage.setItem('spa-pwa-project', result.additionalUserInfo.profile.email);
+      this.setUserSession(true);
+      alert('Logged in!')
+    }).catch((err) => console.log(err))
+
     }
   },
   mounted: function() {
