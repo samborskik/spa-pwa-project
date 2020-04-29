@@ -14,7 +14,7 @@
     </div>
     <div v-else>
       <b-button class="float-sm-right" @click="handleUserLogout" variant="primary">Logout!</b-button>
-      <h1>dupa</h1>
+      <FavoriteUsers />
     </div>
   </div>
 </template>
@@ -23,6 +23,7 @@
 import SearchUser from './SearchUser';
 import Loader from './Loader';
 import User from './User';
+import FavoriteUsers from './FavoriteUsers';
 
 export default {
   name: 'HomePage',
@@ -35,7 +36,8 @@ export default {
   components: {
     SearchUser,
     Loader,
-    User
+    User,
+    FavoriteUsers
   },
   props: {
     setUserSession: Function
