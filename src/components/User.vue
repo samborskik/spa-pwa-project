@@ -5,15 +5,15 @@
         Add to favorites!
       </b-button>
       <b-avatar rounded="lg" size="72px"></b-avatar>
-      <h1 id="user-data">Username:</h1>
+      <h1>Username:</h1>
       <p>{{ userData.username }}</p>
-      <h1 id="user-data">Name:</h1>
+      <h1>Name:</h1>
       <p>{{ userData.name }}</p>
-      <h1 id="user-data">Honor:</h1>
+      <h1>Honor:</h1>
       <p>{{ userData.honor }}</p>
-      <h1 id="user-data">Clan:</h1>
+      <h1>Clan:</h1>
       <p>{{ userData.clan }}</p>
-      <h1 id="user-data">Rank:</h1>
+      <h1>Rank:</h1>
       <p>{{ userData.leaderboardPosition }}</p>
       
     </div>
