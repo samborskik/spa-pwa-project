@@ -10,6 +10,9 @@
           <button @click="removeUsersFromFavorites(user.username)">
             Remove
           </button>
+          <button>
+            Edit
+          </button>
         </li>
       </ul>
       
@@ -70,3 +73,5 @@ export default {
   }
 }
 </script>
+
+
