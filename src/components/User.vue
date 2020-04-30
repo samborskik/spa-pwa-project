@@ -1,13 +1,22 @@
 <template>
   <div>
-    <p>{{ userData.username }}</p>
-    <p>{{ userData.name }}</p>
-    <p>{{ userData.honor }}</p>
-    <p>{{ userData.clan }}</p>
-    <p>{{ userData.leaderboardPosition }}</p>
-    <button @click="addUserToFavorites">
-      Add to favorites
-    </button>
+    <div class="d-block shadow-lg p-3 mb-5 bg-black rounded w-25 p-3 ml-auto mr-auto position-relative">
+      <b-button class="position-absolute" @click="addUserToFavorites" id="fav-button">
+        Add to favorites!
+      </b-button>
+      <b-avatar rounded="lg" size="72px"></b-avatar>
+      <h1>Username:</h1>
+      <p>{{ userData.username }}</p>
+      <h1>Name:</h1>
+      <p>{{ userData.name }}</p>
+      <h1>Honor:</h1>
+      <p>{{ userData.honor }}</p>
+      <h1>Clan:</h1>
+      <p>{{ userData.clan }}</p>
+      <h1>Rank:</h1>
+      <p>{{ userData.leaderboardPosition }}</p>
+      
+    </div>
   </div>
 </template>
 

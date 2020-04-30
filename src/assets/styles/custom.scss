@@ -8,3 +8,21 @@ $secondary: $grey;
 #group-buttons {
     margin: 15px 0;
 }
+
+p {
+    padding: 0 0 3px 0;
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 20px;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+    font-weight: normal;
+    text-decoration: none;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+}
+
+#fav-button {
+    right: 0;
+    top: 0;
+}
