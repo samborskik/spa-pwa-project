@@ -24,8 +24,8 @@ export default {
     getFavoriteUsers: async function() {
       const users = this.users;
       const db = firebase.firestore();
-      const appUser = localStorage.getItem('spa-pwa-project')
-      const dbRef = db.collection(appUser)
+      const appUser = localStorage.getItem('spa-pwa-project');
+      const dbRef = db.collection(appUser);
       dbRef.get()
         .then(function (querySnapshot) {
           querySnapshot.forEach(function(doc) {
@@ -33,6 +33,15 @@ export default {
             console.log(doc.data())
           });
         })
+        .catch(er => console.log(er))
+    },
+    removeUsersFromFavorites: function(user) {
+      const db = firebase.firestore();
+      const appUser = localStorage.getItem('spa-pwa-project');
+      const dbRef = db.collection(appUser);
+      dbRef.doc(user).delete()
+        .then(alert("User deleted"))
+        .catch(er => console.log(er))
     }
   },
   beforeMount: async function() {
