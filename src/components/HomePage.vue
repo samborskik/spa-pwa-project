@@ -1,9 +1,11 @@
 <template>
   <div>
+    <div>
     <b-button class="float-sm-right" @click='handleChangeFormClick'>
       <span v-if="changeView">Show Favorites</span>
       <span v-else>Back to Search</span>
     </b-button>
+    </div>
     <div v-if="changeView">
       <b-button class="float-sm-right" @click="handleUserLogout" variant="primary">Logout!</b-button>
       <SearchUser :getUserData="this.getUserData" />
