@@ -4,7 +4,7 @@
     <b-form>
       <b-form-group>
         <label for="email-input">E-mail:</label>
-        <b-input id="email-input" type="email" v-model="email" placeholder="Email" required></b-input>
+        <b-input id="email-input" type="email" v-model="email" required></b-input>
       </b-form-group>
       <label for="text-password">Password:</label>
       <b-input v-model="password" type="password" id="text-password" required></b-input>
