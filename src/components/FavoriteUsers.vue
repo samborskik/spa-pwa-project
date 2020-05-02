@@ -1,11 +1,12 @@
 <template>
   <div>
     <Loader v-if="isLoading === true" />
-    <b-container v-else>
+    <b-container v-else >
       <b-row v-for="user in users" :key="user.name " class="shadow-lg favouriteUsers mb-3">
         <div>
           <b-avatar rounded="lg" size="40px"></b-avatar>
         </div>
+        
         <div>
           <p>{{user.username}}</p>
         </div>
@@ -16,16 +17,16 @@
           <p>{{user.honor}}</p>
         </div>
         <div class="buttons">
-          <div>
-            <b-button variant="primary" @click="removeUsersFromFavorites(user.username)">
-              <font-awesome-icon icon="user-times" />
-            </b-button>
-          </div>
-          <div>
-            <b-button>
-              <font-awesome-icon icon="user-edit" />
-            </b-button>
-          </div>
+        <div>
+          <b-button variant="primary" @click="removeUsersFromFavorites(user.username)">
+            <font-awesome-icon icon="user-times" />
+          </b-button>
+        </div>
+        <div>
+          <b-button>
+            <font-awesome-icon icon="user-edit" />
+          </b-button>
+        </div>
         </div>
       </b-row>
     </b-container>
@@ -86,19 +87,21 @@
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
-  @media screen and (max-width: 576px) {
-    flex-direction: column;
-    max-width: 70vw;
-    margin: 0 auto;
-  }
+    @media screen and (max-width: 576px) { 
+      flex-direction: column;
+      max-width: 70vw;
+      margin: 0 auto;
+    }
+    p {
+      min-width: 15vw;
+    }
+    .buttons {
+      display: flex;
+      float: left;
+    }
 }
 
-.favouriteUsers p {
-  min-width: 15vw;
-}
 
-.buttons {
-  display: flex;
-  float: left;
-}
+
+
 </style>
