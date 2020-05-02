@@ -7,13 +7,13 @@
           <div>
             <img :src='user.image' />
           </div> 
-          <div class="userData">
+          <div>
             <p>{{user.username}}</p>
           </div>
-          <div class="userData">
+          <div>
             <p>{{user.clan || 'No clan'}}</p>
           </div>
-          <div class="userData">
+          <div>
             <p>{{user.honor}}</p>
           </div>
           <div class="buttons">
