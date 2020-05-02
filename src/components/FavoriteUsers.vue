@@ -123,6 +123,7 @@
   align-items: center;
     p {
       min-width: 7vw;
+      margin: 0;
     }
     .buttons {
       display: flex;
@@ -142,6 +143,9 @@
       flex-direction: column;
       max-width: 70vw;
       margin: 0 auto;
+      p {
+        margin: 0.5rem 0;
+      }
     }
 }
 </style>
