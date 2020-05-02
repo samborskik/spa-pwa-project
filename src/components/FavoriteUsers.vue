@@ -5,8 +5,7 @@
       <b-row v-for="user in users" :key="user.name " class="shadow-lg favouriteUsers mb-3">
         <div>
           <b-avatar rounded="lg" size="40px"></b-avatar>
-        </div>
-        
+        </div> 
         <div>
           <p>{{user.username}}</p>
         </div>
@@ -100,8 +99,4 @@
       float: left;
     }
 }
-
-
-
-
 </style>
