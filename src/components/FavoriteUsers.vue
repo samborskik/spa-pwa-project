@@ -93,8 +93,10 @@
         dbRef.doc(user).delete()
           .then(alert("User deleted"))
           .catch(er => console.log(er))
-        const index = this.users.indexOf(user);
+        this.users.map(x=> console.log(x.username, 'before'))
+        const index = this.users.findIndex(item => item.username === user);
         this.users.splice(index, 1);
+        this.users.map(x=> console.log(x.username, 'after'))
         this.isLoading = false;
       },
       setEditUserImageView: async function () {
@@ -123,24 +125,31 @@
   align-items: center;
 
     p {
-      min-width: 15vw;
+      min-width: 7vw;
+      margin: 0;
     }
-
     .buttons {
       display: flex;
       float: left;
+      align-items: center;
     }
 
     img {
-      width: 200px;
-      height: 200px;
+      width: 150px;
+      height: 150px;
       object-fit: cover;
+      border-radius: 10%;
+      margin: 10px;
     }
     
     @media screen and (max-width: 576px) { 
       flex-direction: column;
       max-width: 70vw;
       margin: 0 auto;
+      
+      p {
+        margin: 0.5rem 0;
+      }
     }
 }
 </style>

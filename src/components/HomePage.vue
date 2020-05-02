@@ -2,12 +2,12 @@
   <div>
     <nav>
       <b-button class="float-sm-right" @click='handleChangeFormClick'>
-        <span v-if="changeView">Show Favorites</span>
+        <span v-if="!changeView">Show Favorites</span>
         <span v-else>Back to Search</span>
       </b-button>
       <b-button class="float-sm-right" @click="handleUserLogout" variant="primary">Logout!</b-button>
     </nav>
-    <div v-if="changeView">
+    <div v-if="!changeView">
       <SearchUser :getUserData="this.getUserData" />
       <Loader v-if="isLoading" />
       <User

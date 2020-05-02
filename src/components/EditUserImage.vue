@@ -1,18 +1,22 @@
 <template>
   <div>
     <div v-if="!image">
-      <h2>Select an image for `{{this.user}}`</h2>
-      <button @click="this.changeView">
+      <h2>Select an image for {{this.user}}</h2>
+      <b-button @click="this.changeView">
         Back to user list
-      </button>
+      </b-button>
     </div>
     <div v-else>
       <img :src="image" />
-      <button @click="uploadImage">
-        Submit
-      </button>
+      <div>
+        <b-button @click="uploadImage">
+          Submit
+        </b-button>
+      </div>
     </div>
-    <input type="file" @change="onFileChange">
+    <div>
+      <b-form-file class="file-picker" type="file" @change="onFileChange"></b-form-file>
+    </div>
   </div>
 </template>
 
@@ -70,3 +74,9 @@
     },
   }
 </script>
+
+<style lang="scss">
+  .file-picker {
+    max-width: 400px;
+  }
+</style>
