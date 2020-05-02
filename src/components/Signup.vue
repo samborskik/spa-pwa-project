@@ -11,6 +11,7 @@
           id="email-input" 
           type="email" 
           v-model="email" 
+          placeholder="Email"
           required></b-form-input>
       </b-form-group>
       <b-form-group>
