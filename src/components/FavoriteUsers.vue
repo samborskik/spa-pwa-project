@@ -7,13 +7,13 @@
           <div>
             <img :src='user.image' />
           </div> 
-          <div>
+          <div class="userData">
             <p>{{user.username}}</p>
           </div>
-          <div>
+          <div class="userData">
             <p>{{user.clan || 'No clan'}}</p>
           </div>
-          <div>
+          <div class="userData">
             <p>{{user.honor}}</p>
           </div>
           <div class="buttons">
@@ -121,20 +121,21 @@
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
-
     p {
-      min-width: 15vw;
+      min-width: 7vw;
     }
-
     .buttons {
       display: flex;
       float: left;
+      align-items: center;
     }
 
     img {
-      width: 200px;
-      height: 200px;
+      width: 150px;
+      height: 150px;
       object-fit: cover;
+      border-radius: 10%;
+      margin: 10px;
     }
     
     @media screen and (max-width: 576px) { 
