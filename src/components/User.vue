@@ -21,7 +21,6 @@
 
 <script>
 import firebase from 'firebase';
-
 export default {
   name: 'User',
   props: {
@@ -50,3 +49,10 @@ export default {
   }
 }
 </script>
+
+<style scoped lang="scss">
+  #fav-button {
+    right: 0;
+    top: 0;
+  }
+</style>
