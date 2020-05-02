@@ -86,17 +86,20 @@
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
+
+    p {
+      min-width: 15vw;
+    }
+
+    .buttons {
+      display: flex;
+      float: left;
+    }
+    
     @media screen and (max-width: 576px) { 
       flex-direction: column;
       max-width: 70vw;
       margin: 0 auto;
-    }
-    p {
-      min-width: 15vw;
-    }
-    .buttons {
-      display: flex;
-      float: left;
     }
 }
 </style>
