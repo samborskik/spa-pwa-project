@@ -19,3 +19,8 @@
 <img src="https://cdn.discordapp.com/attachments/588323428390666261/706205953493827674/unknown.png" alt="favlist" width="200"/> 
 <img src="https://cdn.discordapp.com/attachments/588323428390666261/706205969318936647/unknown.png" alt="edituser" width="200"/> 
 
+### Składowe projektu
+* https://vuejs.org/
+* https://bootstrap-vue.org/
+* https://getbootstrap.com/
+* https://dev.codewars.com/
