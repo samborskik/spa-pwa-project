@@ -1,11 +1,13 @@
 <template>
   <div>
-    <b-button class="float-sm-right" @click='handleChangeFormClick'>
-      <span v-if="changeView">Show Favorites</span>
-      <span v-else>Back to Search</span>
-    </b-button>
-    <div v-if="changeView">
+    <nav>
+      <b-button class="float-sm-right" @click='handleChangeFormClick'>
+        <span v-if="changeView">Show Favorites</span>
+        <span v-else>Back to Search</span>
+      </b-button>
       <b-button class="float-sm-right" @click="handleUserLogout" variant="primary">Logout!</b-button>
+    </nav>
+    <div v-if="changeView">
       <SearchUser :getUserData="this.getUserData" />
     <Loader v-if="isLoading" />
     <User
@@ -13,8 +15,7 @@
       :userData="this.userData"/>
     </div>
     <div v-else>
-      <b-button class="float-sm-right" @click="handleUserLogout" variant="primary">Logout!</b-button>
-      <h1>dupa</h1>
+      <FavoriteUsers />
     </div>
   </div>
 </template>
@@ -23,6 +24,7 @@
 import SearchUser from './SearchUser';
 import Loader from './Loader';
 import User from './User';
+import FavoriteUsers from './FavoriteUsers';
 
 export default {
   name: 'HomePage',
@@ -35,7 +37,8 @@ export default {
   components: {
     SearchUser,
     Loader,
-    User
+    User,
+    FavoriteUsers
   },
   props: {
     setUserSession: Function
