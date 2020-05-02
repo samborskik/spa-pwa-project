@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="d-block shadow-lg p-3 mb-5 bg-black rounded w-25 p-3 ml-auto mr-auto position-relative">
+    <div class="col-12 col-sm-8 col-lg-3 m-auto p-3 shadow-lg">
       <b-button class="position-absolute" @click="addUserToFavorites" id="fav-button">
         Add to favorites!
       </b-button>
@@ -15,7 +15,6 @@
       <p>{{ userData.clan }}</p>
       <h1>Rank:</h1>
       <p>{{ userData.leaderboardPosition }}</p>
-      
     </div>
   </div>
 </template>

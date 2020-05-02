@@ -1,16 +1,12 @@
 <template>
   <div>
-    
-    <b-input-group class="mt-4-d-inline-flex p-2 bd-highlight w-25 p-3 ml-auto mr-auto">
-      <b-form-input v-model="userName"></b-form-input>
+    <b-input-group class="col-12 col-sm-8 col-lg-3 m-auto p-0 pb-3">
+      <b-form-input v-model="userName" ></b-form-input>
       <b-input-group-append>
-        <b-button class="raddish" variant="primary" @click="handleSearchClick">Search</b-button>
+        <b-button variant="primary" @click="handleSearchClick">Search</b-button>
       </b-input-group-append>
     </b-input-group>
-
   </div>
-
-
 </template>
 
 <script>

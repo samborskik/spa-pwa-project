@@ -74,29 +74,4 @@ export default {
 <style lang="scss">
 @import './assets/styles/custom.scss';
 @import '../node_modules/bootstrap/scss/bootstrap.scss';
-
-body {
-  background: #333;
-  margin: 0;
-  padding: 0;
-}
-
-.login {
-  max-width: 20vw;
-  margin: 0 auto;
-}
-
-.reddish {
-  margin: 2vh;
-}
-
-#landingPage {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #b32;
-  margin-top: 60px;
-}
-
 </style>
