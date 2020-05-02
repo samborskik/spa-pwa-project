@@ -1,20 +1,22 @@
 <template>
   <div>
     <div class="col-12 col-sm-8 col-lg-3 m-auto p-3 shadow-lg">
-      <b-button class="position-absolute" @click="addUserToFavorites" id="fav-button">
+      <b-button class="position-absolute fav-button" @click="addUserToFavorites">
         Add to favorites!
       </b-button>
-      <b-avatar rounded="lg" size="72px"></b-avatar>
-      <h1>Username:</h1>
-      <p>{{ userData.username }}</p>
-      <h1>Name:</h1>
-      <p>{{ userData.name }}</p>
-      <h1>Honor:</h1>
-      <p>{{ userData.honor }}</p>
-      <h1>Clan:</h1>
-      <p>{{ userData.clan }}</p>
-      <h1>Rank:</h1>
-      <p>{{ userData.leaderboardPosition }}</p>
+      <div class="userData">
+        <b-avatar rounded="lg" size="72px"></b-avatar>
+        <h1>Username:</h1>
+        <p>{{ userData.username }}</p>
+        <h1>Name:</h1>
+        <p>{{ userData.name }}</p>
+        <h1>Honor:</h1>
+        <p>{{ userData.honor }}</p>
+        <h1>Clan:</h1>
+        <p>{{ userData.clan }}</p>
+        <h1>Rank:</h1>
+        <p>{{ userData.leaderboardPosition }}</p>
+      </div>
     </div>
   </div>
 </template>
@@ -51,8 +53,11 @@ export default {
 </script>
 
 <style scoped lang="scss">
-  #fav-button {
+  .fav-button {
     right: 0;
     top: 0;
+  }
+  .userData {
+    margin-top: 30px;
   }
 </style>
