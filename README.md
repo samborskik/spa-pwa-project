@@ -12,3 +12,10 @@
 3. Możliwość dodania użytkownika do ulubionych z przechowywaniem w bazie danych.
 4. Możliwość edytowania domyślnego avataru użytkownika oraz usuwanie użytkownika z listy ulubionych.
 
+
+
+![login](https://cdn.discordapp.com/attachments/588323428390666261/706204367757377616/unknown.png)
+
+![login](https://cdn.discordapp.com/attachments/588323428390666261/706204367757377616/unknown.png =100x20)
+
+<img src="https://cdn.discordapp.com/attachments/588323428390666261/706204367757377616/unknown.png" alt="drawing" width="200"/>
