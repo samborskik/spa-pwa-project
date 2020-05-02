@@ -20,7 +20,7 @@
 <img src="https://cdn.discordapp.com/attachments/588323428390666261/706205969318936647/unknown.png" alt="edituser" width="200"/> 
 
 ### Składowe projektu
-* https://vuejs.org/
-* https://bootstrap-vue.org/
-* https://getbootstrap.com/
-* https://dev.codewars.com/
+* [Vue.js](https://vuejs.org/)
+* [Bootstrap Vue.js](https://bootstrap-vue.org/)
+* [Bootstrap](https://getbootstrap.com/)
+* [Codewars API](https://dev.codewars.com/)
