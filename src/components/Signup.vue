@@ -10,7 +10,7 @@
         <b-form-input
           id="email-input" 
           type="email" 
-          v-model="email" 
+          v-model="email"
           required></b-form-input>
       </b-form-group>
       <b-form-group>
