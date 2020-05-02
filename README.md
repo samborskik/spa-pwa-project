@@ -1,7 +1,7 @@
 ## Projekt zaliczeniowy z przedmiotów PSM i PWA
 
 ### Tematyka i opis projektu
-    Tematem projektu jest aplikacja pozwalająca na stworzenie konta, logowanie, wyszukiwanie i dodawanie do ulubionych wyszukanych użytkowników. Wyszukiwanie jest przeprowadzane dzięki API, które udostępnia strona Codewars. Użytkownicy dodani do ulubionych są przechowywani w bazie danych Firebase. Dodatkowo możemy usunąć użytkownika lub zmienić jego domyślny avatar.
+   ##### Tematem projektu jest aplikacja pozwalająca na stworzenie konta, logowanie, wyszukiwanie i dodawanie do ulubionych wyszukanych użytkowników. Wyszukiwanie jest przeprowadzane dzięki API, które udostępnia strona Codewars. Użytkownicy dodani do ulubionych są przechowywani w bazie danych Firebase. Dodatkowo możemy usunąć użytkownika lub zmienić jego domyślny avatar.
 
 
 
