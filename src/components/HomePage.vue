@@ -9,10 +9,10 @@
     </nav>
     <div v-if="changeView">
       <SearchUser :getUserData="this.getUserData" />
-    <Loader v-if="isLoading" />
-    <User
-      v-if="isLoading === false && userData.name !== undefined"
-      :userData="this.userData"/>
+      <Loader v-if="isLoading" />
+      <User
+        v-if="isLoading === false && userData.name !== undefined"
+        :userData="this.userData"/>
     </div>
     <div v-else>
       <FavoriteUsers />
