@@ -3,8 +3,9 @@
     <div v-if="!editUser">
       <Loader v-if="isLoading === true" />
       <b-container v-else >
-        <b-button @click="showGraphModal()">
-          Show user graph
+        <b-button @click="showGraphModal()" v-on:click='handleChangeFormClick'>
+          <span v-if="!changeView">Show Graph</span>
+          <span v-else>Close graph</span>
         </b-button>
         <Modal
           v-if="showGraph"
@@ -68,6 +69,7 @@
     data: () => ({
       users: [],
       focusedUser: '',
+      changeView: false,
       isLoading: false,
       editUser: false,
       showGraph: false,
@@ -80,6 +82,9 @@
       Modal
     },
     methods: {
+      handleChangeFormClick: function() {
+      this.changeView = !this.changeView;
+      },
       handleBackToFavoritesListClick: function() {
         this.showUserDetails = false;
       },

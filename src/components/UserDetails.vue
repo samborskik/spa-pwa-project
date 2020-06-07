@@ -73,7 +73,7 @@ export default {
     top: 100px;
     left: 0;  
     width: 100%;
-    height: 200%;
+    height: 100%;
   }
   .languagelvl {
     padding: 30px 0;

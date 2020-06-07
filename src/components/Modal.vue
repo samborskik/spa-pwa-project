@@ -1,9 +1,8 @@
 <template>
   <div>
-    <b-button @click="this.showModal">
-     Click here to close graph!
-    </b-button>
-    <bar-chart :chart-data="datacollection"></bar-chart>
+    <div class="container">
+      <bar-chart :chart-data="datacollection"></bar-chart>
+    </div>
   </div>
 </template>
 
