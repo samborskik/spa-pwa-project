@@ -3,9 +3,9 @@
     <div v-if="!editUser">
       <Loader v-if="isLoading === true" />
       <b-container v-else >
-        <button @click="showGraphModal()">
+        <b-button @click="showGraphModal()">
           Show user graph
-        </button>
+        </b-button>
         <Modal
           v-if="showGraph"
           :users="this.users"
@@ -16,9 +16,9 @@
             <img :src='user.image' />
           </div> 
           <div>
-            <button @click="handleNameClick(user.username)">
+            <b-button @click="handleNameClick(user.username)">
               <p>{{user.username}}</p>
-            </button>
+            </b-button>
           </div>
           <div>
             <p>{{user.clan || 'No clan'}}</p>

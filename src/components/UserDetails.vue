@@ -1,25 +1,31 @@
 <template>
   <div>
     <Loader v-if="isLoading" />
-    <div v-else>
-      <div>
-        <p>{{this.userDetails.username}}</p>
-        <p>{{this.userDetails.name}}</p>
-        <p>{{this.userDetails.honor}}</p>
-        <p>{{this.userDetails.clan}}</p>
-        <p>{{this.userDetails.leaderboardPosition}}</p>
+    <div class="UserDetails" v-else>
+      <div class="box">
+        <div>
+          <p>Username: {{this.userDetails.username}}</p>
+          <p>Name: {{this.userDetails.name}}</p>
+          <p>Honor: {{this.userDetails.honor}}</p>
+          <p>Clan: {{this.userDetails.clan}}</p>
+          <p>Leadeboard position: {{this.userDetails.leaderboardPosition}}</p>
+        </div>
+        <div class="languagelvl">
+        <p>Programming language level</p>
         <ul v-for="[key, value] of Object.entries(userDetails.ranks.languages)" :key="key">
-          <li>
-            {{key}} 
-            {{value.score}}
-            {{value.rank*(-1)}} kyu
-          </li>
+          <div>
+            <li>
+              <p class="language">Language: {{key}}</p> 
+              <p class="score">Score: {{value.score}}</p>
+              <p class="rank">Rank: {{value.rank*(-1)}} kyu</p>
+            </li>
+          </div>
         </ul>
-
+        </div>
       </div>
-      <button @click="this.backCallback">
-        backToFav users
-      </button>
+      <b-button @click="this.backCallback">
+        Get back to favourite users!
+      </b-button>
     </div>
   </div>
 </template>
@@ -59,3 +65,36 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+  .UserDetails {
+    background-color: #333;
+    position: absolute;
+    top: 100px;
+    left: 0;  
+    width: 100%;
+    height: 200%;
+  }
+  .languagelvl {
+    padding: 30px 0;
+  }
+  .box div {
+    font-family: Arial, Helvetica, sans-serif;
+    box-shadow: 10px #666;
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+  ul div {
+    margin: 0 auto;
+    max-width: 400px;
+    list-style-type: none;
+    border: 1px solid #444;
+  }
+  li p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    margin: 4px; 
+  }
+</style>

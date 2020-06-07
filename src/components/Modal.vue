@@ -1,8 +1,8 @@
 <template>
   <div>
-    <button @click="this.showModal">
-      click to close graph
-    </button>
+    <b-button @click="this.showModal">
+     Click here to close graph!
+    </b-button>
     <bar-chart :chart-data="datacollection"></bar-chart>
   </div>
 </template>
@@ -63,9 +63,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.modal {
-  // position: relative;  
-}
 
 .modal__inner {
   // position: absolute;
