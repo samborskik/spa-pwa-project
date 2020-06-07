@@ -1,8 +1,8 @@
 <template>
   <div>
     <div class="container">
-      <bar-chart :chart-data="datacollection"></bar-chart>
-    </div>
+      <bar-chart :chart-data="datacollection" :height="270"></bar-chart>
+    </div>  
   </div>
 </template>
 
@@ -62,13 +62,9 @@ export default {
 </script>
 
 <style scoped lang="scss">
-
-.modal__inner {
-  // position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 50vh;
-  height: 50vh;
+.container {
+  margin-bottom: 500px;
 }
+
 
 </style>
