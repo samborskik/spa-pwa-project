@@ -3,12 +3,22 @@
     <div v-if="!editUser">
       <Loader v-if="isLoading === true" />
       <b-container v-else >
+        <button @click="showGraphModal()">
+          Show user graph
+        </button>
+        <Modal
+          v-if="showGraph"
+          :users="this.users"
+          :showModal="this.showGraphModal"
+        />
         <b-row v-for="user in users" :key="user.name " class="shadow-lg favouriteUsers mb-3">
           <div>
             <img :src='user.image' />
           </div> 
           <div>
-            <p>{{user.username}}</p>
+            <button @click="handleNameClick(user.username)">
+              <p>{{user.username}}</p>
+            </button>
           </div>
           <div>
             <p>{{user.clan || 'No clan'}}</p>
@@ -37,12 +47,20 @@
         :changeView='this.setEditUserImageView'
       />
     </div>
+    <div v-if="showUserDetails">
+      <UserDetails 
+        :user="this.focusedUser"
+        :backCallback="this.handleBackToFavoritesListClick"
+      />
+    </div>
   </div>
 </template>
 
 <script>
   import Loader from './Loader';
   import EditUserImage from './EditUserImage';
+  import Modal from './Modal';
+  import UserDetails from './UserDetails';
   import firebase from 'firebase';
 
   export default {
@@ -52,12 +70,26 @@
       focusedUser: '',
       isLoading: false,
       editUser: false,
+      showGraph: false,
+      showUserDetails: false,
     }),
     components: {
       Loader,
-      EditUserImage
+      EditUserImage,
+      UserDetails,
+      Modal
     },
     methods: {
+      handleBackToFavoritesListClick: function() {
+        this.showUserDetails = false;
+      },
+      handleNameClick: function(user) {
+        this.focusedUser = user;
+        this.showUserDetails = true;
+      },
+      showGraphModal: function() {
+        this.showGraph = !this.showGraph;
+      },
       getFavoriteUsers: async function () {
         const users = this.users;
         const db = firebase.firestore();
